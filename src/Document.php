@@ -1,4 +1,4 @@
-<?php  namespace Filebase;
+<?php  namespace LeafDB;
 
 
 class Document
@@ -49,7 +49,7 @@ class Document
     * Saving the document to disk (file)
     *
     * @param mixed $data (optional, only if you want to "replace" entire doc data)
-    * @return @see \Filebase\Database save()
+    * @return @see \LeafDB\Database save()
     */
     public function save($data = '')
     {
@@ -63,7 +63,7 @@ class Document
     *
     * Deletes document from disk (file)
     *
-    * @return @see \Filebase\Database delete()
+    * @return @see \LeafDB\Database delete()
     */
     public function delete()
     {

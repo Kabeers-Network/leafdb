@@ -1,8 +1,8 @@
-<?php  namespace Filebase;
+<?php  namespace LeafDB;
 
-use Filebase\Format\DecodingException;
-use Filebase\Format\EncodingException;
-use Filebase\Format\Yaml;
+use LeafDB\Format\DecodingException;
+use LeafDB\Format\EncodingException;
+use LeafDB\Format\Yaml;
 
 class FormatYamlTest extends \PHPUnit\Framework\TestCase
 {

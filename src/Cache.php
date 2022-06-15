@@ -1,4 +1,4 @@
-<?php  namespace Filebase;
+<?php  namespace LeafDB;
 
 
 class Cache
@@ -7,7 +7,7 @@ class Cache
     /**
     * $database
     *
-    * \Filebase\Database
+    * \LeafDB\Database
     */
     protected $database;
 
@@ -15,7 +15,7 @@ class Cache
     /**
     * $cache_database
     *
-    * \Filebase\Database
+    * \LeafDB\Database
     */
     protected $cache_database;
 
@@ -34,7 +34,7 @@ class Cache
     {
         $this->database = $database;
 
-        $this->cache_database  = new \Filebase\Database([
+        $this->cache_database  = new \LeafDB\Database([
     		'dir' => $this->database->getConfig()->dir.'/__cache',
             'cache' => false,
             'pretty' => false

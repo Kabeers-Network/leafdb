@@ -1,9 +1,9 @@
-<?php  namespace Filebase;
+<?php  namespace LeafDB;
 
 /**
  * Recursive sort logic class
  *
- * @package Filebase
+ * @package LeafDB
  */
 class SortLogic
 {

@@ -1,14 +1,14 @@
-<?php  namespace Filebase;
+<?php  namespace LeafDB;
 
 class BackupYamlTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testBackupLocationCustom()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir'            => __DIR__.'/databases/mydatabasetobackup',
             'backupLocation' => __DIR__.'/databases/storage/backups',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->backup();
@@ -20,9 +20,9 @@ class BackupYamlTest extends \PHPUnit\Framework\TestCase
     public function testBackupLocationDefault()
     {
 
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/mydatabasetobackup',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->backup();
@@ -33,10 +33,10 @@ class BackupYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testBackupCreate()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/mydatabasetobackup',
             'backupLocation' => __DIR__.'/databases/storage/backups',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -58,10 +58,10 @@ class BackupYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testBackupFind()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/mydatabasetobackup',
             'backupLocation' => __DIR__.'/databases/storage/backups',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -84,10 +84,10 @@ class BackupYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testBackupFindSort()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/mydatabasetobackup',
             'backupLocation' => __DIR__.'/databases/storage/backups',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -116,10 +116,10 @@ class BackupYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testBackupCleanup()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/mydatabasetobackup',
             'backupLocation' => __DIR__.'/databases/storage/backups',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $backupBefore = $db->backup()->find();
@@ -137,10 +137,10 @@ class BackupYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testBackupRestore()
     {
-        $db1 = new \Filebase\Database([
+        $db1 = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/backupdb',
             'backupLocation' => __DIR__.'/databases/storage/backupdb',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         for ($x = 1; $x <= 25; $x++)
@@ -154,10 +154,10 @@ class BackupYamlTest extends \PHPUnit\Framework\TestCase
 
         $items1 = $db1->count();
 
-        $db2 = new \Filebase\Database([
+        $db2 = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/backupdb2',
             'backupLocation' => __DIR__.'/databases/storage/backupdb',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db2->backup()->rollback();

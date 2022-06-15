@@ -1,4 +1,4 @@
-<?php  namespace Filebase;
+<?php  namespace LeafDB;
 
 
 class Validate
@@ -22,7 +22,7 @@ class Validate
     /**
     * getValidateRules
     *
-    * @param \Filebase\Document
+    * @param \LeafDB\Document
     * @return database->config
     */
     public static function getValidateRules(Document $object)
@@ -62,7 +62,7 @@ class Validate
     *
     * Throws exception error if matches are not met.
     *
-    * @return \Filebase\Document Object
+    * @return \LeafDB\Document Object
     */
     protected static function validateRules($document,$key,$rules,$object)
     {

@@ -1,4 +1,4 @@
-<?php  namespace Filebase;
+<?php  namespace LeafDB;
 
 
 class Query extends QueryLogic
@@ -201,7 +201,7 @@ class Query extends QueryLogic
     /**
     * toArray
     *
-    * @param \Filebase\Document
+    * @param \LeafDB\Document
     * @return array
     */
     public function toArray()

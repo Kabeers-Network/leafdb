@@ -1,4 +1,4 @@
-<?php namespace Filebase\Filesystem;
+<?php namespace LeafDB\Filesystem;
 
 class SavingException extends FilesystemException
 {

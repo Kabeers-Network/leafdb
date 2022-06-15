@@ -1,11 +1,11 @@
-<?php  namespace Filebase;
+<?php  namespace LeafDB;
 
 class BackupTest extends \PHPUnit\Framework\TestCase
 {
 
     public function testBackupLocationCustom()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir'            => __DIR__.'/databases/mydatabasetobackup',
             'backupLocation' => __DIR__.'/databases/storage/backups'
         ]);
@@ -19,7 +19,7 @@ class BackupTest extends \PHPUnit\Framework\TestCase
     public function testBackupLocationDefault()
     {
 
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/mydatabasetobackup'
         ]);
 
@@ -31,7 +31,7 @@ class BackupTest extends \PHPUnit\Framework\TestCase
 
     public function testBackupCreate()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/mydatabasetobackup',
             'backupLocation' => __DIR__.'/databases/storage/backups'
         ]);
@@ -55,7 +55,7 @@ class BackupTest extends \PHPUnit\Framework\TestCase
 
     public function testBackupFind()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/mydatabasetobackup',
             'backupLocation' => __DIR__.'/databases/storage/backups'
         ]);
@@ -80,7 +80,7 @@ class BackupTest extends \PHPUnit\Framework\TestCase
 
     public function testBackupFindSort()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/mydatabasetobackup',
             'backupLocation' => __DIR__.'/databases/storage/backups'
         ]);
@@ -111,7 +111,7 @@ class BackupTest extends \PHPUnit\Framework\TestCase
 
     public function testBackupCleanup()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/mydatabasetobackup',
             'backupLocation' => __DIR__.'/databases/storage/backups'
         ]);
@@ -131,7 +131,7 @@ class BackupTest extends \PHPUnit\Framework\TestCase
 
     public function testBackupRestore()
     {
-        $db1 = new \Filebase\Database([
+        $db1 = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/backupdb',
             'backupLocation' => __DIR__.'/databases/storage/backupdb'
         ]);
@@ -147,7 +147,7 @@ class BackupTest extends \PHPUnit\Framework\TestCase
 
         $items1 = $db1->count();
 
-        $db2 = new \Filebase\Database([
+        $db2 = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/backupdb2',
             'backupLocation' => __DIR__.'/databases/storage/backupdb'
         ]);

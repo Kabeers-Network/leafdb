@@ -1,6 +1,6 @@
-<?php  namespace Filebase;
+<?php  namespace LeafDB;
 
-use Filebase\SortLogic;
+use LeafDB\SortLogic;
 
 class QueryLogic
 {
@@ -8,14 +8,14 @@ class QueryLogic
     /**
     * $database
     *
-    * \Filebase\Database
+    * \LeafDB\Database
     */
     protected $database;
 
     /**
     * $predicate
     *
-    * \Filebase\Predicate
+    * \LeafDB\Predicate
     */
     protected $predicate;
 
@@ -23,7 +23,7 @@ class QueryLogic
     /**
     * $cache
     *
-    * \Filebase\Cache
+    * \LeafDB\Cache
     */
     protected $cache = false;
 

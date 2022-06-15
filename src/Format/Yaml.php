@@ -1,4 +1,4 @@
-<?php  namespace Filebase\Format;
+<?php  namespace LeafDB\Format;
 
 use Symfony\Component\Yaml\Yaml as YamlParser;
 

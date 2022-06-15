@@ -1,8 +1,7 @@
-# Filebase
+# Leaf DB - PHP
 
-[![Build Status](https://travis-ci.org/tmarois/Filebase.svg?branch=1.0)](https://travis-ci.org/tmarois/Filebase) [![Coverage Status](https://coveralls.io/repos/github/tmarois/Filebase/badge.svg?branch=1.0)](https://coveralls.io/github/tmarois/Filebase?branch=1.0)
+[![Build Status](https://travis-ci.org/tmarois/LeafDB.svg?branch=1.0)](https://travis-ci.org/tmarois/LeafDB) [![Coverage Status](https://coveralls.io/repos/github/tmarois/LeafDB/badge.svg?branch=1.0)](https://coveralls.io/github/tmarois/LeafDB?branch=1.0)
 
-[Join Discord](https://discord.gg/kywDsDnJ6C) – For support, updates and collaboration.
 
 A Simple but Powerful Flat File Database Storage. No need for MySQL or an expensive SQL server, in fact, you just need your current site or application setup. All database entries are stored in files ([formatted](README.md#2-formatting) the way you like).
 
@@ -10,13 +9,13 @@ You can even modify the raw data within the files themselves without ever needin
 
 Doesn't that sound awesome?
 
-With Filebase, you are in complete control. Design your data structure the way you want. Use arrays and objects like you know how in PHP. Update and share your data with others and teams using version control. Just remember, upgrading your web/apache server is a lot less than your database server.
+With LeafDB, you are in complete control. Design your data structure the way you want. Use arrays and objects like you know how in PHP. Update and share your data with others and teams using version control. Just remember, upgrading your web/apache server is a lot less than your database server.
 
 Works with **PHP 5.6** and **PHP 7+**
 
 ### Features
 
-Filebase is simple by design, but has enough features for the more advanced.
+LeafDB is simple by design, but has enough features for the more advanced.
 
 * Key/Value and Array-based Data Storing
 * [Querying data](README.md#8-queries)
@@ -41,7 +40,7 @@ If you do not want to use composer, download the files, and include it within yo
 
 ```php
 // setting the access and configration to your database
-$database = new \Filebase\Database([
+$database = new \LeafDB\Database([
     'dir' => 'path/to/database/dir'
 ]);
 
@@ -85,10 +84,10 @@ The config is *required* when defining your database. The options are *optional*
 Usage Example (all options)
 
 ```php
-$db = new \Filebase\Database([
+$db = new \LeafDB\Database([
     'dir'            => 'path/to/database/dir',
     'backupLocation' => 'path/to/database/backup/dir',
-    'format'         => \Filebase\Format\Json::class,
+    'format'         => \LeafDB\Format\Json::class,
     'cache'          => true,
     'cache_expires'  => 1800,
     'pretty'         => true,
@@ -107,7 +106,7 @@ $db = new \Filebase\Database([
 |---				|---		|---			         	|---														|
 |`dir`				|string		|current directory          |The directory where the database files are stored. 	    |
 |`backupLocation`   |string		|current directory (`/backups`)         |The directory where the backup zip files will be stored. 	    |
-|`format`			|object		|`\Filebase\Format\Json`   |The format class used to encode/decode data				|
+|`format`			|object		|`\LeafDB\Format\Json`   |The format class used to encode/decode data				|
 |`validate`			|array		|   |Check [Validation Rules](README.md#6-validation-optional) for more details |
 |`cache`			|bool		|true   |Stores [query](README.md#8-queries) results into cache for faster loading.				|
 |`cache_expire`		|int		|1800   |How long caching will last (in seconds)	|
@@ -120,16 +119,16 @@ $db = new \Filebase\Database([
 
 Format Class is what defines the encoding and decoding of data within your database files.
 
-You can write your own or change the existing format class in the config. The methods in the class must be `static` and the class must implement `\Filebase\Format\FormatInterface`
+You can write your own or change the existing format class in the config. The methods in the class must be `static` and the class must implement `\LeafDB\Format\FormatInterface`
 
 The Default Format Class: `JSON`
 ```php
-\Filebase\Format\Json::class
+\LeafDB\Format\Json::class
 ```
 
 Additional Format Classes: `Yaml`
 ```php
-\Filebase\Format\Yaml::class
+\LeafDB\Format\Yaml::class
 ```
 
 ## (3) GET (and methods)
@@ -147,7 +146,7 @@ $item = $db->get($userId);
 
 ```
 
-`get()` returns `\Filebase\Document` object and has its own methods which you can call.
+`get()` returns `\LeafDB\Document` object and has its own methods which you can call.
 
 |Method|Details|
 |---|---|
@@ -213,14 +212,14 @@ $item->delete();
 ## (5) Database Methods
 
 ```php
-$db = new \Filebase\Database($config);
+$db = new \LeafDB\Database($config);
 ```
 
 Here is a list of methods you can use on the database class.
 
 |Method|Details|
 |---|---|
-|`version()`                      | Current version of your Filebase library |
+|`version()`                      | Current version of your LeafDB library |
 |`get($id)`                       | Refer to [get()](README.md#3-get-and-methods) |
 |`has($id)`                       | Check if a record exist returning true/false |
 |`findAll()`                      | Returns all documents in database |
@@ -234,7 +233,7 @@ Here is a list of methods you can use on the database class.
 Examples
 
 ```php
-$users = new \Filebase\Database([
+$users = new \LeafDB\Database([
     'dir' => '/storage/users',
 ]);
 
@@ -268,7 +267,7 @@ When invoking `save()` method, the document will be checked for validation rules
 These rules MUST pass in order for the document to save.
 
 ```php
-$db = new \Filebase\Database([
+$db = new \LeafDB\Database([
     'dir' => '/path/to/database/dir',
     'validate' => [
         'name'   => [
@@ -483,7 +482,7 @@ These methods can be used when invoking `backup()` on your `Database`.
 
 ```php
 // invoke your database
-$database = new \Filebase\Database([
+$database = new \LeafDB\Database([
     'dir' => '/storage/users',
     'backupLocation' => '/storage/backup',
 ]);
@@ -504,9 +503,9 @@ $database->backup()->rollback();
 ```
 
 
-## Why Filebase?
+## Why LeafDB?
 
-Filebase was built for the flexibility to help manage simple data storage without the hassle of a heavy database engine. The concept of Filebase is to provide very intuitive API methods, and make it easy for the developer to maintain and manage (even on a large scale).
+LeafDB was built for the flexibility to help manage simple data storage without the hassle of a heavy database engine. The concept of LeafDB is to provide very intuitive API methods, and make it easy for the developer to maintain and manage (even on a large scale).
 
 Inspired by [Flywheel](https://github.com/jamesmoss/flywheel) and [Flinetone](https://github.com/fire015/flintstone).
 
@@ -519,10 +518,10 @@ Versions are as follows: Major.Minor.Patch
 * Minor: New Features/Changes that breaks compatibility.
 * Patch: New Features/Fixes that does not break compatibility.
 
-Filebase will work-hard to be **backwards-compatible** when possible.
+LeafDB will work-hard to be **backwards-compatible** when possible.
 
 
-## Sites and Users of Filebase
+## Sites and Users of LeafDB
 
 * [Grayscale Inc](https://grayscale.com)
 * [VIP Auto](http://vipautoli.com)
@@ -534,14 +533,14 @@ Filebase will work-hard to be **backwards-compatible** when possible.
 * [Discount Savings](https://discount-savings.com)
 * [Vivint - Smart Homes](http://smarthomesecurityplans.com/)
 
-*If you are using Filebase – send in a pull request and we will add your project here.*
+*If you are using LeafDB – send in a pull request and we will add your project here.*
 
 
 ## Contributions
 
-Anyone can contribute to Filebase. Please do so by posting issues when you've found something that is unexpected or sending a pull request for improvements.
+Anyone can contribute to LeafDB. Please do so by posting issues when you've found something that is unexpected or sending a pull request for improvements.
 
 
 ## License
 
-Filebase is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+LeafDB is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

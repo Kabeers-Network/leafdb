@@ -1,10 +1,10 @@
-<?php  namespace Filebase;
+<?php  namespace LeafDB;
 
 use Exception;
-use Filebase\Format\EncodingException;
-use Filebase\Filesystem\SavingException;
-use Filebase\Filesystem\ReadingException;
-use Filebase\Filesystem\FilesystemException;
+use LeafDB\Format\EncodingException;
+use LeafDB\Filesystem\SavingException;
+use LeafDB\Filesystem\ReadingException;
+use LeafDB\Filesystem\FilesystemException;
 
 class Database
 {
@@ -12,7 +12,7 @@ class Database
     /**
     * VERSION
     *
-    * Stores the version of Filebase
+    * Stores the version of LeafDB
     * use $db->getVersion()
     */
     const VERSION = '1.0.24';
@@ -21,7 +21,7 @@ class Database
     * $config
     *
     * Stores all the configuration object settings
-    * \Filebase\Config
+    * \LeafDB\Config
     */
     protected $config;
 
@@ -56,7 +56,7 @@ class Database
     /**
     * version
     *
-    * gets the Filebase version
+    * gets the LeafDB version
     *
     * @return VERSION
     */
@@ -112,7 +112,7 @@ class Database
     *
     * @param mixed $id
     *
-    * @return $document \Filebase\Document object
+    * @return $document \LeafDB\Document object
     */
     public function get($id)
     {
@@ -154,7 +154,7 @@ class Database
     *
     * @param string $location (optional)
     *
-    * @return $document \Filebase\Backup object
+    * @return $document \LeafDB\Backup object
     */
     public function backup($location = '')
     {
@@ -169,10 +169,10 @@ class Database
     /**
     * set
     *
-    * @param $document \Filebase\Document object
+    * @param $document \LeafDB\Document object
     * @param mixed $data should be an array
     *
-    * @return $document \Filebase\Document object
+    * @return $document \LeafDB\Document object
     */
     public function set(Document $document, $data)
     {
@@ -289,7 +289,7 @@ class Database
     /**
     * delete
     *
-    * @param $document \Filebase\Document object
+    * @param $document \LeafDB\Document object
     * @return (bool) true/false if file was deleted
     */
     public function delete(Document $document)
@@ -372,7 +372,7 @@ class Database
     /**
     * toArray
     *
-    * @param \Filebase\Document
+    * @param \LeafDB\Document
     * @return array
     */
     public function toArray(Document $document)

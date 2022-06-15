@@ -1,4 +1,4 @@
-<?php  namespace Filebase;
+<?php  namespace LeafDB;
 
 class QueryTest extends \PHPUnit\Framework\TestCase
 {
@@ -22,7 +22,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
     */
     public function testWhereCountAllEqualCompare()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false
         ]);
@@ -82,7 +82,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
     */
     public function testWhereCountAllNotEqualCompare()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false
         ]);
@@ -143,7 +143,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
     */
     public function testWhereCountAllGreaterLessCompare()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false
         ]);
@@ -207,7 +207,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
     */
     public function testWhereLike()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_like',
             'cache' => false
         ]);
@@ -269,7 +269,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
     */
     public function testWhereRegex()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_regex',
             'cache' => false
         ]);
@@ -321,7 +321,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
     */
     public function testLimitOffset()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_orderby',
             'cache' => false
         ]);
@@ -368,7 +368,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
     */
     /*public function testSelectQuery()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_select',
             'cache' => false
         ]);
@@ -437,7 +437,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
     */
     public function testSorting()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_orderby',
             'cache' => false
         ]);
@@ -500,7 +500,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
 
     public function prepareMultiOrderTestData()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__ . '/databases/users_orderbymult',
             'cache' => false
         ]);
@@ -604,7 +604,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
     */
     public function testWhereIn()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false
         ]);
@@ -683,7 +683,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
     */
     public function testWithoutWhere()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false
         ]);
@@ -743,7 +743,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
 
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false
         ]);
@@ -776,7 +776,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
 
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false
         ]);
@@ -809,7 +809,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
 
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false
         ]);
@@ -838,7 +838,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
     */
     public function testUserNameQuery()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_names',
             'cache' => false
         ]);
@@ -876,7 +876,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
     */
     public function testQueryCount()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_qcounter',
             'cache' => false
         ]);
@@ -918,7 +918,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
 
     public function testWhereQueryWhereCount()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false
         ]);
@@ -951,7 +951,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
 
     public function testWhereQueryFindNameCount()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_2'
         ]);
 
@@ -987,7 +987,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
 
     public function testOrWhereQueryCount()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false
         ]);
@@ -1024,7 +1024,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
 
     public function testWhereQueryFromCache()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1'
         ]);
 
@@ -1057,7 +1057,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
 
     public function testQueryFromCacheAfterDelete()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/deleted',
             'cache' => true
         ]);
@@ -1098,7 +1098,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
 
     public function testQueryFromCacheAfterSave()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/saved',
             'cache' => true
         ]);
@@ -1140,7 +1140,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
 
     public function testDeleteWhereMatchItemsWithCustomFilter()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/deletefilter',
         ]);
 
@@ -1182,7 +1182,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
 
     public function testSortByTimes()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/_testsort'
         ]);
 
@@ -1238,7 +1238,7 @@ class QueryTest extends \PHPUnit\Framework\TestCase
      */
     public function testWhereInUsingDocId()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false
         ]);

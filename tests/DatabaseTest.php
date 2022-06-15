@@ -1,7 +1,7 @@
-<?php  namespace Filebase;
+<?php  namespace LeafDB;
 
 
-use Filebase\Filesystem\SavingException;
+use LeafDB\Filesystem\SavingException;
 
 class badformat {
 
@@ -13,7 +13,7 @@ class DatabaseTest extends \PHPUnit\Framework\TestCase
 
     public function testVersion()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
             'read_only' => true
         ]);
@@ -33,7 +33,7 @@ class DatabaseTest extends \PHPUnit\Framework\TestCase
 
         chmod(__DIR__.'/databases/cantedit', 0444);
 
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/cantedit'
         ]);
 
@@ -51,7 +51,7 @@ class DatabaseTest extends \PHPUnit\Framework\TestCase
 
         chmod(__DIR__.'/databases/cantedit', 0444);
 
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/cantedit',
             'read_only' => true
         ]);
@@ -68,14 +68,14 @@ class DatabaseTest extends \PHPUnit\Framework\TestCase
     {
         $this->expectException(\Exception::class);
 
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases'
         ]);
 
         $db->flush(true);
         $db->get('test1')->set(['key'=>'value'])->save();
 
-        $db2 = new \Filebase\Database([
+        $db2 = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
             'read_only' => true
         ]);
@@ -90,7 +90,7 @@ class DatabaseTest extends \PHPUnit\Framework\TestCase
     {
         $this->expectException(\Exception::class);
 
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
             'read_only' => true
         ]);
@@ -103,7 +103,7 @@ class DatabaseTest extends \PHPUnit\Framework\TestCase
     {
         $this->expectException(\Exception::class);
 
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
             'read_only' => true
         ]);
@@ -117,7 +117,7 @@ class DatabaseTest extends \PHPUnit\Framework\TestCase
     {
         $this->expectException(\Exception::class);
 
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
             'read_only' => true
         ]);
@@ -131,7 +131,7 @@ class DatabaseTest extends \PHPUnit\Framework\TestCase
     {
         $this->expectException(\Exception::class);
 
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
             'format' => ''
         ]);
@@ -142,7 +142,7 @@ class DatabaseTest extends \PHPUnit\Framework\TestCase
     {
         $this->expectException(\Exception::class);
 
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
             'format' => badformat::class
         ]);
@@ -151,7 +151,7 @@ class DatabaseTest extends \PHPUnit\Framework\TestCase
 
     public function testDatabaseFlushTrue()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases'
         ]);
 
@@ -167,7 +167,7 @@ class DatabaseTest extends \PHPUnit\Framework\TestCase
 
     public function testDatabaseTruncate()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/test_delete'
         ]);
 
@@ -187,7 +187,7 @@ class DatabaseTest extends \PHPUnit\Framework\TestCase
     {
         $this->expectException(\Exception::class);
 
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases'
         ]);
 
@@ -202,7 +202,7 @@ class DatabaseTest extends \PHPUnit\Framework\TestCase
 
     public function testDatabaseFindAllSimple()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases'
         ]);
 
@@ -226,7 +226,7 @@ class DatabaseTest extends \PHPUnit\Framework\TestCase
 
     public function testDatabaseFindAllDataOnly()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases'
         ]);
 
@@ -247,7 +247,7 @@ class DatabaseTest extends \PHPUnit\Framework\TestCase
     {
         $this->expectException(SavingException::class);
 
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases'
         ]);
 
@@ -260,7 +260,7 @@ class DatabaseTest extends \PHPUnit\Framework\TestCase
     }
     public function test_Call_Queryclass_methods_on_database_without_query_method()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/saved',
             'cache' => true
         ]);
@@ -300,7 +300,7 @@ class DatabaseTest extends \PHPUnit\Framework\TestCase
     }
     public function test_must_return_exception_on_non_exist_method()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/saved',
             'cache' => true
         ]);
@@ -314,7 +314,7 @@ class DatabaseTest extends \PHPUnit\Framework\TestCase
      */
     public function test_must_return_array_on_select_an_culomn_from_cache()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/saved',
             'cache' => true
         ]);

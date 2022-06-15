@@ -1,4 +1,4 @@
-<?php  namespace Filebase;
+<?php  namespace LeafDB;
 
 
 class Backup
@@ -16,14 +16,14 @@ class Backup
     * $config
     *
     * Stores all the configuration object settings
-    * \Filebase\Config
+    * \LeafDB\Config
     */
     protected $config;
 
     /**
     * $database
     *
-    * \Filebase\Database
+    * \LeafDB\Database
     */
     protected $database;
 

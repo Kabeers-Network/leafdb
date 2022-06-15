@@ -1,4 +1,4 @@
-<?php  namespace Filebase;
+<?php  namespace LeafDB;
 
 class QueryYamlTest extends \PHPUnit\Framework\TestCase
 {
@@ -22,10 +22,10 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
     */
     public function testWhereCountAllEqualCompare()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         // FIRST TEST
@@ -83,10 +83,10 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
     */
     public function testWhereCountAllNotEqualCompare()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -145,10 +145,10 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
     */
     public function testWhereCountAllGreaterLessCompare()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -210,10 +210,10 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
     */
     public function testWhereLike()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_like',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -273,10 +273,10 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
     */
     public function testWhereRegex()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_regex',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -326,10 +326,10 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
     */
     public function testLimitOffset()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_orderby',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -374,9 +374,9 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
     */
     /*public function testSelectQuery()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_select',
-            'cache' => false,             'format' => \Filebase\Format\Yaml::class
+            'cache' => false,             'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -443,10 +443,10 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
     */
     public function testSorting()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_orderby',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -519,10 +519,10 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
     */
     public function testWhereIn()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -599,10 +599,10 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
     */
     public function testWithoutWhere()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -660,10 +660,10 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
 
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         // FIRST TEST
@@ -694,10 +694,10 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
 
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         // FIRST TEST
@@ -728,10 +728,10 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
     {
         $this->expectException(\InvalidArgumentException::class);
 
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -758,10 +758,10 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
     */
     public function testUserNameQuery()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_names',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -797,10 +797,10 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
     */
     public function testQueryCount()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_qcounter',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -840,10 +840,10 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testWhereQueryWhereCount()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -874,9 +874,9 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testWhereQueryFindNameCount()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_2',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -911,10 +911,10 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testOrWhereQueryCount()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -949,9 +949,9 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testWhereQueryFromCache()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/users_1',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -983,10 +983,10 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testQueryFromCacheAfterDelete()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/deleted',
             'cache' => true,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -1025,10 +1025,10 @@ class QueryYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testQueryFromCacheAfterSave()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases/saved',
             'cache' => true,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);

@@ -1,4 +1,4 @@
-<?php  namespace Filebase;
+<?php  namespace LeafDB;
 
 
 class DocumentYamlTest extends \PHPUnit\Framework\TestCase
@@ -15,10 +15,10 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
     */
     public function testSave()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir'   => __DIR__.'/databases',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -52,10 +52,10 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
         */
         public function testDoesNotExist()
         {
-            $db = new \Filebase\Database([
+            $db = new \LeafDB\Database([
                 'dir'   => __DIR__.'/databases',
                 'cache' => false,
-                'format' => \Filebase\Format\Yaml::class
+                'format' => \LeafDB\Format\Yaml::class
             ]);
 
             $db->flush(true);
@@ -85,10 +85,10 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
     */
     public function testSetIdGetId()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir'   => __DIR__.'/databases/data_rename',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         // save data
@@ -119,10 +119,10 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
     */
     public function testSetValue()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -163,10 +163,10 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
     */
     public function testIssetUnset()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
             'cache' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -190,9 +190,9 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testArraySetValueSave()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -209,9 +209,9 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testPropertySetValueSave()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -230,9 +230,9 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testToArray()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -249,9 +249,9 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testDelete()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -268,9 +268,9 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testGetId()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -287,9 +287,9 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testSetId()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -310,9 +310,9 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testDates()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -331,9 +331,9 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testFormatDates()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -352,9 +352,9 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testNoFormatDates()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -373,9 +373,9 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testMissingUpdatedDate()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -397,9 +397,9 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testCustomFilter()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -430,9 +430,9 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testCustomFilterParam()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -464,9 +464,9 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testCustomFilterParamIndex()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -500,9 +500,9 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testCustomFilterEmpty()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -522,9 +522,9 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testFieldMethod()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -541,9 +541,9 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
 
     public function testNestedFieldMethod()
     {
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);
@@ -566,10 +566,10 @@ class DocumentYamlTest extends \PHPUnit\Framework\TestCase
     {
         $this->expectException(\Exception::class);
 
-        $db = new \Filebase\Database([
+        $db = new \LeafDB\Database([
             'dir' => __DIR__.'/databases',
             'safe_filename' => false,
-            'format' => \Filebase\Format\Yaml::class
+            'format' => \LeafDB\Format\Yaml::class
         ]);
 
         $db->flush(true);

@@ -1,4 +1,4 @@
-<?php  namespace Filebase;
+<?php  namespace LeafDB;
 
 
 class Config
@@ -16,7 +16,7 @@ class Config
     * Format Class
     * Must implement Format\FormatInterface
     */
-    public $format = \Filebase\Format\Json::class;
+    public $format = \LeafDB\Format\Json::class;
 
     /**
     * $cache
@@ -110,16 +110,16 @@ class Config
     {
         if (!class_exists($this->format))
         {
-            throw new \Exception('Filebase Error: Missing format class in config.');
+            throw new \Exception('LeafDB Error: Missing format class in config.');
         }
 
         // instantiate the format class
         $format_class = new $this->format;
 
         // check now if that class is part of our interface
-        if (!$format_class instanceof \Filebase\Format\FormatInterface)
+        if (!$format_class instanceof \LeafDB\Format\FormatInterface)
         {
-            throw new \Exception('Filebase Error: Format Class must be an instance of Filebase\Format\FormatInterface');
+            throw new \Exception('LeafDB Error: Format Class must be an instance of LeafDB\Format\FormatInterface');
         }
     }
 }

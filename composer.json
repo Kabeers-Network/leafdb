@@ -1,8 +1,8 @@
 {
 	"description": "A Simple but Powerful Flat File Database Storage.",
-	"keywords": ["filebase", "key-value","file-files", "flat", "file", "database", "document", "flat-file", "serverless"],
-	"name": "tmarois/filebase",
-	"homepage": "https://github.com/tmarois/Filebase",
+	"keywords": ["leafdb", "key-value","file-files", "flat", "file", "database", "document", "flat-file", "serverless"],
+	"name": "kabeersnetwork/leafdb",
+	"homepage": "https://github.com/kabeers-network/leafdb",
 	"type": "package",
 	"licence": "MIT",
 
@@ -29,7 +29,7 @@
 
 	"autoload": {
 		"psr-4": {
-			"Filebase\\": "src/"
+			"LeafDB\\": "src/"
 		}
 	}
 }
